@@ -24,7 +24,7 @@ const app = express();
 app.use(cors())
 app.use(express.json()); 
 
-app.get('/', (req, res)=> { res.send(db.users) })
+app.get('/', (req, res)=> { res.send("trabajando") })
 app.post('/signin', signin.handleSignin(db, bcrypt))
 app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt) })
 app.get('/profile/:id', (req, res) => { profile.handleProfileGet(req, res, db)})
@@ -34,3 +34,6 @@ app.post('/imageurl', (req, res) => { image.handleApiCall(req, res)})
 app.listen(process.env.PORT || 3000, ()=> {
   console.log('app escuchando en puerto 3000');
 })
+
+
+//db,bcrypt
